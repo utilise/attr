@@ -27,8 +27,8 @@ describe('attr', function() {
     expect(attr(d3, 'key')).to.eql('value')
   })
 
-  it('should coerce to empty string if value not set', function() {
-    expect(attr(el, 'baz')).to.eql('')
+  it('should not coerce to empty string if value not set', function() {
+    expect(attr(el, 'baz')).to.eql(null)
   })
 
 })
