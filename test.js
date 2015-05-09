@@ -31,4 +31,11 @@ describe('attr', function() {
     expect(attr(el, 'baz')).to.eql(null)
   })
 
+  it('should remove an attribute', function() {
+    attr(el, 'baz', 'yes')
+    expect(attr(el, 'baz')).to.eql('yes')
+    attr(el, 'baz', false)
+    expect(attr(el, 'baz')).to.eql(null)
+  })
+
 })
