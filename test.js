@@ -1,9 +1,25 @@
 var expect = require('chai').expect
+  , client = require('client')
   , attr   = require('./')
-  , el     = require("jsdom").jsdom('<div key="value">').defaultView.document.body.firstElementChild
+  , el 
 
 describe('attr', function() {
   
+  before(function(){
+    /* istanbul ignore else */
+    if (!client) return el =require("jsdom")
+      .jsdom('<div key="value">')
+      .defaultView
+      .document
+      .body
+      .firstElementChild
+
+    /* istanbul ignore next */
+    el = document.body.appendChild(document.createElement('div'))
+    /* istanbul ignore next */
+    el.setAttribute('key', 'value')
+  })
+
   it('should get value of attribute', function() {
     expect(attr(el, 'key')).to.equal('value')
   })
