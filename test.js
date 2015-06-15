@@ -7,7 +7,7 @@ describe('attr', function() {
   
   before(function(){
     /* istanbul ignore else */
-    if (!client) return el =require("jsdom")
+    if (!client) return el = require("jsdom")
       .jsdom('<div key="value">')
       .defaultView
       .document
@@ -52,6 +52,11 @@ describe('attr', function() {
     expect(attr(el, 'baz')).to.eql('yes')
     attr(el, 'baz', false)
     expect(attr(el, 'baz')).to.eql(null)
+  })
+
+  it('should work curried', function() {
+    expect(attr('key')(el)).to.eql('value')
+    expect(attr('key').call(el)).to.eql('value')
   })
 
 })
