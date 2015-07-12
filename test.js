@@ -29,6 +29,11 @@ describe('attr', function() {
     expect(attr(el, 'foo')).to.equal('bar')
   })
 
+  it('should set value of attribute', function() {
+    attr('foo', 'bar')(el)
+    expect(attr(el, 'foo')).to.equal('bar')
+  })
+
   it('should work with lists', function() {
     var input = [el, el]
       , result = input.map(attr('key'))
