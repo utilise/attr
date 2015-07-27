@@ -1,4 +1,4 @@
-var is = require('is')
+var is = require('utilise.is')
 
 module.exports = function attr(d, name, value) {
   d = d.node ? d.node() : d

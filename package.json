@@ -1,5 +1,5 @@
 {
-  "name": "attr",
+  "name": "utilise.attr",
   "version": "0.0.0",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,7 @@
   "license": "pemrouz.mit-license.org",
   "devDependencies": {
     "chai": "^2.3.0",
-    "client": "git+https://github.com/utilise/client.git",
+    "utilise.client": "*",
     "coveralls": "^2.11.2",
     "istanbul": "^0.3.13",
     "jsdom": "^5.3.0",
@@ -18,6 +18,6 @@
     "mocha-lcov-reporter": "0.0.2"
   },
   "dependencies": {
-    "is": "git+https://github.com/utilise/is.git"
+    "utilise.is": "*"
   }
 }

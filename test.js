@@ -1,5 +1,5 @@
 var expect = require('chai').expect
-  , client = require('client')
+  , client = require('utilise.client')
   , attr   = require('./')
   , el 
 
