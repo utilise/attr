@@ -25,7 +25,7 @@ describe('attr', function() {
   })
 
   it('should set value of attribute', function() {
-    attr(el, 'foo', 'bar')
+    expect(attr(el, 'foo', 'bar')).to.equal('bar')
     expect(attr(el, 'foo')).to.equal('bar')
   })
 
