@@ -30,8 +30,8 @@ describe('attr', function() {
   })
 
   it('should set value of attribute', function() {
-    attr('foo', 'bar')(el)
-    expect(attr(el, 'foo')).to.equal('bar')
+    attr('foo', 'baz')(el)
+    expect(attr(el, 'foo')).to.equal('baz')
   })
 
   it('should work with lists', function() {
