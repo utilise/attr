@@ -64,4 +64,13 @@ describe('attr', function() {
     expect(attr('key').call(el)).to.eql('value')
   })
 
+  it('should work with shadow roots', function() {
+    var root = el.ownerDocument.createElement('div')
+    root.host = el  
+    expect(attr('key')(root)).to.eql('value')
+    expect(attr('key').call(root)).to.eql('value')
+    expect(attr('key', 'foo')(root)).to.eql('foo')
+    expect(attr('key')(el)).to.eql('foo')
+  })
+
 })
