@@ -1,5 +1,6 @@
 var expect = require('chai').expect
   , client = require('utilise.client')
+  , owner  = require('utilise.owner')
   , attr   = require('./')
   , el 
 
@@ -71,6 +72,15 @@ describe('attr', function() {
     expect(attr('key').call(root)).to.eql('value')
     expect(attr('key', 'foo')(root)).to.eql('foo')
     expect(attr('key')(el)).to.eql('foo')
+  })
+
+  it('should never confuse with window', function() {
+    owner.node = true
+    var root = el.ownerDocument.createElement('div')
+    expect(attr('key', 'foo')(root)).to.eql('foo')
+    expect(attr('key')(root)).to.eql('foo')
+    expect(attr('key', 'bar').call(root)).to.eql('bar')
+    expect(attr('key').call(root)).to.eql('bar')
   })
 
 })
